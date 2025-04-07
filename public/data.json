@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1f3ae99b-7b6b-4869-ba06-fd8181f7d0fa",
+    "question": "spring-cloud-starter-bootstrap",
+    "answer": "Load configuration properties before the main application context started.",
+    "sideNote": "spring-cloud that is disabled by default in boot 2.7.x",
+    "mainTag": "spring-cloud",
+    "tags": [
+      "configuration",
+      "bootstrap",
+      "Ribbon",
+      "Eureka",
+      "load-balancing"
+    ],
+    "type": "DEPENDENCY",
+    "notes": [
+      "Reads configuration from Spring Cloud Config Server, Vault, Consul, or Zookeeper before the main context starts.",
+      "If you're using Spring Cloud Config Server with encrypted properties, the bootstrap context ensures decryption happens before the main app starts",
+      "Ensures load-balancing (Ribbon, Eureka) and service discovery settings are initialized early"
+    ],
+    "createdAt": "2024-03-20T10:00:00Z"
+  },
+  {
+    "id": "4bf40f77-1153-4363-be0f-ac1968b6beb2",
+    "question": "spring-boot-dependencies",
+    "answer": "Focuses on core Spring Boot features (web, data, security).",
+    "sideNote": "Provides version management and dependency configurations for Spring Boot applications.",
+    "mainTag": "spring-boot",
+    "tags": [
+      "dependencies",
+      "core"
+    ],
+    "type": "QUESTION",
+    "notes": [
+      "Contains the core dependency management for Spring Boot",
+      "Defines versions for all Spring Boot managed dependencies",
+      "Parent POM for Spring Boot applications"
+    ],
+    "createdAt": "2024-03-20T10:01:00Z"
+  },
+  {
+    "id": "2b3099fb-0899-4cd7-bc94-5253780cd032",
+    "question": "spring-cloud-dependencies",
+    "answer": "Spring Cloud provides tools for building distributed, microservices-based applications that run in cloud environments.",
+    "sideNote": "Includes Service Discovery (Eureka), Circuit Breaker (Resilience4j/Hystrix), Load Balancing (Ribbon), and API Gateway.",
+    "mainTag": "spring-cloud",
+    "tags": [
+      "microservices",
+      "cloud"
+    ],
+    "type": "DEPENDENCY",
+    "notes": [
+      "BOM (Bill of Materials) for Spring Cloud dependencies",
+      "Ensures compatible versions between Spring Cloud components",
+      "Includes version management for Netflix OSS components",
+      "Required for microservices architecture with Spring Cloud"
+    ],
+    "createdAt": "2024-03-20T10:02:00Z"
+  }
+]
