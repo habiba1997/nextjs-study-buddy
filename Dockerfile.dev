@@ -1,0 +1,18 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Set npm to use public registry
+RUN npm config set registry https://registry.npmjs.org/
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install dependencies using npm install to handle any package-lock discrepancies
+RUN npm install
+
+# Expose the port the app will run on
+EXPOSE 3000
+
+# The command to start the development server will come from docker-compose
+CMD ["npm", "run", "dev"] 
