@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  nextjs-app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the entire project directory for development
+      - .:/app
+      # Avoid mounting node_modules
+      - /app/node_modules
+      # Avoid mounting .next
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NPM_CONFIG_REGISTRY=https://registry.npmjs.org/
+      - NPM_CONFIG_ALWAYS_AUTH=false
+    command: npm run dev
+    restart: unless-stopped 
