@@ -56,5 +56,46 @@
       "Required for microservices architecture with Spring Cloud"
     ],
     "createdAt": "2024-03-20T10:02:00Z"
+  },
+  {
+    "id": "6e0465d4-8ac5-47f1-8709-d277dc2ab7da",
+    "question": "401 Status code",
+    "answer": "401 Unauthorized. The request lacks valid authentication credentials. The server requires the client to authenticate before accessing the resource.\n",
+    "sideNote": "Example: Missing or invalid API token.",
+    "mainTag": "statuscode",
+    "tags": [
+      ""
+    ],
+    "type": "QUESTION",
+    "notes": [],
+    "createdAt": "2025-04-08T16:14:19.393Z"
+  },
+  {
+    "id": "8e10efef-ea77-4be0-878f-b9e002051838",
+    "question": "403 status code",
+    "answer": "403 Forbidden: The client is authenticated but does not have permission to access the requested resource.",
+    "sideNote": "Example: User is logged in but does not have the required role/permission.",
+    "mainTag": "statuscode",
+    "tags": [
+      "403"
+    ],
+    "type": "QUESTION",
+    "notes": [],
+    "createdAt": "2025-04-08T16:14:56.441Z"
+  },
+  {
+    "id": "27898113-510a-4490-bc8a-f4f2ab1cb79a",
+    "question": " In Spring Boot 2.7, attempting to delete a non-existent entity using CrudRepository.deleteById(id) would result in an EmptyResultDataAccessException. However, in Spring 3.x, A 201 status code is produced stating that entity deleted successfully although it didn't exist in 1st place. ",
+    "answer": "The behavior aligns with RESTful principles regarding idempotency for DELETE operations. According to HTTP semantics:\n\nA DELETE request should be idempotent, meaning that multiple identical requests should produce the same result.\n\nDeleting an already deleted resource should not result in an error but should instead return a success response (e.g., 200 Accepted).\n\nSince the requested entity may have already been deleted in a previous operation, returning 202 Accepted is valid and expected.",
+    "sideNote": "2.7 and 3 both documentation state the Spring 3.x behavior, while 3.x is the only one that aligns with the documented standard:\n\nSpring Data JPA Documentation:\n\"Deletes the entity with the given id. If the entity is not found in the persistence store, it is silently ignored.\"",
+    "mainTag": "idempotency",
+    "tags": [
+      "restful",
+      "spring-data",
+      "migrate2.7to3"
+    ],
+    "type": "MIGRATE",
+    "notes": [],
+    "createdAt": "2025-04-08T16:19:51.927Z"
   }
 ]

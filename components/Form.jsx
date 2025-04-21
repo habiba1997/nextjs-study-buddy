@@ -16,6 +16,13 @@ const Form = ({ onAddQuestion }) => {
 
   const [newNote, setNewNote] = useState("");
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission
+      handleAddNote();
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -179,6 +186,7 @@ const Form = ({ onAddQuestion }) => {
               value={newNote}
               onChange={(e) => setNewNote(e.target.value)}
               placeholder="Add a new note"
+              onKeyDown={handleKeyPress} 
             />
             <Button
               variant="outline-primary"
