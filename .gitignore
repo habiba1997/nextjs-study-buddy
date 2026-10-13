@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local-only files and generated output
+.DS_Store
+.idea/
+.vscode/
+.qodo/
+node_modules/
+target/
+.next/
+out/
+dist/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
